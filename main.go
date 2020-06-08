@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"io"
 	"log"
@@ -12,11 +13,14 @@ import (
 	"github.com/watson-developer-cloud/go-sdk/speechtotextv1"
 )
 
+var archivo = flag.String("file", "", "Ruta del archivo de audio")
+
 func main() {
 	err := godotenv.Load()
 	if err != nil {
 		log.Fatalf("Error loading .env file")
 	}
+	flag.Parse()
 
 	authenticator := &core.IamAuthenticator{
 		ApiKey: os.Getenv("API_KEY"),
@@ -35,7 +39,7 @@ func main() {
 	speechToText.SetServiceURL(os.Getenv("SERVICE_URL"))
 	model := "es-ES_BroadbandModel"
 
-	files := [1]string{"audioflac.flac"}
+	files := [1]string{*archivo}
 	for _, file := range files {
 
 		mime, err := mimetype.DetectFile(file)

@@ -17,6 +17,12 @@ API_KEY=TU_API_KEY
 SERVICE_URL=TU_URL_SERVICIO
 ```
 
+Para ejecutar el programa se debe pasar el agrumento `file` en la ejecución con la ruta del archivo y su extensión
+```shell
+go run .\main.go -file="audioflac.flac"
+```
+
+
 ## Dependencias Principales
 ### Watson SDKs (Go)
 #### https://cloud.ibm.com/docs/speech-to-text?topic=watson-using-sdks
