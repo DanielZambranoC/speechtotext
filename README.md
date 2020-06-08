@@ -14,7 +14,7 @@ Agrega en la carpeta raiz un archivo `.env`  con las siguientes variables:
 
 ```shell
 API_KEY=TU_API_KEY
-SERVICE_URL=TU_UR_SERVICIO
+SERVICE_URL=TU_URL_SERVICIO
 ```
 
 ## Dependencias Principales
