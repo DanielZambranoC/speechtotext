@@ -22,6 +22,12 @@ Para ejecutar el programa se debe pasar el agrumento `file` en la ejecución con
 go run .\main.go -file="audioflac.flac"
 ```
 
+### Opcional
+Para pasar el modelo del lenguaje como argumento sli se debe utilizar model (por defecto está: *es-ES_BroadbandModel*)
+
+```shell
+go run .\main.go -file="audioflac.flac" -model="ar-AR_BroadbandModel" 
+```
 
 ## Dependencias Principales
 ### Watson SDKs (Go)

@@ -14,6 +14,7 @@ import (
 )
 
 var archivo = flag.String("file", "", "Ruta del archivo de audio")
+var modelo = flag.String("model", "es-ES_BroadbandModel", "Modelo del idioma, defecto: es-ES_BroadbandModel")
 
 func main() {
 	err := godotenv.Load()
@@ -37,7 +38,8 @@ func main() {
 	}
 
 	speechToText.SetServiceURL(os.Getenv("SERVICE_URL"))
-	model := "es-ES_BroadbandModel"
+
+	model := *modelo
 
 	files := [1]string{*archivo}
 	for _, file := range files {
