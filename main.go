@@ -57,13 +57,11 @@ func main() {
 				WordAlternativesThreshold: core.Float32Ptr(0.9),
 				Model:                     &model,
 			},
-			// Keywords:                  []string{"prueba", "sonido"},
-			// KeywordsThreshold:         core.Float32Ptr(0.5),
 		)
 		if responseErr != nil {
 			panic(responseErr)
 		}
-		//fmt.Println(response)
+
 		x := result.Results
 		for _, a := range x {
 			for _, t := range a.Alternatives {
@@ -71,9 +69,5 @@ func main() {
 			}
 		}
 
-		//fmt.Println(x)
-		//b, _ := json.MarshalIndent(result, "", "  ")
-		//['results'][0]['alternatives'][0]['transcript']
-		//fmt.Println(string(b))
 	}
 }
